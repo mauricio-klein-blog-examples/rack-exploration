@@ -6,7 +6,7 @@ class Footer
 
   def call(env)
     status, headers, @response = @app.call(env)
-    Rack::Response.new(self, status, headers)
+    Rack::Response.new(self, status, headers).finish
   end
 
   def each(&block)
